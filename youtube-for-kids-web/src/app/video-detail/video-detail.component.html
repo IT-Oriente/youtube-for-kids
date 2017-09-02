@@ -1,0 +1,21 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      <h1>{{ video?.snippet.title }}</h1>
+    </md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <youtube-player
+      *ngIf="videoId"
+      [videoId]="videoId"
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)"></youtube-player>
+    </md-card-content>
+    <h2>Descripción</h2>
+    <p>
+      <ng-template ngFor let-line [ngForOf]="formattedDescription">
+        <span>{{ line }}</span>
+        <br>
+      </ng-template>
+    </p>
+</md-card>

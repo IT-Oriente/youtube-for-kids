@@ -4,7 +4,7 @@
       <md-icon>menu</md-icon>
     </button>
     <div class="branding">
-      <span>YouTube For Kids</span>
+      <span>YouTube Player</span>
     </div>
     <div class="search-bar" fxFlex fxFlexFill fxLayout fxLayoutAlign="start center">
       <form class="search-form" fxShow="false" fxShow.gt-xs fxFlex>
@@ -20,12 +20,12 @@
         <md-nav-list appAccordion class="navigation" fxFlex fxFlexFill>
           <md-list-item appAccordionLink group="recents">
             <a appAccordionToggle class="relative" md-ripple [routerLink]="['/results']">
-              <md-icon>play_arrow</md-icon>
-              <span>Recientes</span>
+              <md-icon>home</md-icon>
+              <span>Inicio</span>
               <span fxFlex></span>
             </a>
           </md-list-item>
-          <md-list-item appAccordionLink group="recents">
+          <!-- <md-list-item appAccordionLink group="recents">
             <a appAccordionToggle class="relative" md-ripple [routerLink]="['/admin', 'recents']">
               <md-icon>play_arrow</md-icon>
               <span>Recientes</span>
@@ -38,7 +38,7 @@
               <span>Recientes</span>
               <span fxFlex></span>
             </a>
-          </md-list-item>
+          </md-list-item> -->
         </md-nav-list>
       </perfect-scrollbar>
     </md-sidenav>

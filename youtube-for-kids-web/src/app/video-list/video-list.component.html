@@ -7,7 +7,7 @@
   <md-card-content>
     <md-nav-list>
       <div *ngFor="let video of videos | async">
-        <a md-list-item href="details/?id={{video.id.videoId}}">
+        <a md-list-item routerLink="/detail/{{video.id.videoId}}">
           <img md-list-avatar [src]="video.snippet.thumbnails.default.url">
           <h4 md-line>{{video.snippet.title}}</h4>
           <p md-line>

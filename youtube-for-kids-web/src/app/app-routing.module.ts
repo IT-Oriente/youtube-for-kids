@@ -11,6 +11,10 @@ const routes: Routes = [
         path: 'results',
         loadChildren: './video-list/video-list.module#VideoListModule',
       },
+      {
+        path: 'detail/:videoId',
+        loadChildren: './video-detail/video-detail.module#VideoDetailModule',
+      },
     ]
   }
 ];

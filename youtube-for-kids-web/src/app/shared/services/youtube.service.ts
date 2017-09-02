@@ -16,9 +16,17 @@ export class YoutubeService {
   ) {
   }
 
+  get = (videoId: number | string): Observable<Video> => this.api.get<QueryResult<Video>>(
+    'videos', {
+      params: this.request.getParams({
+        part: 'snippet,contentDetails,statistics',
+        id: videoId,
+      })
+    }
+  ).map(result => result.items && result.items[0])
+
   search = (): Observable<QueryResult<Video>> => this.api.get<QueryResult<Video>>(
-    'search',
-    {
+    'search', {
       params: this.request.getParams({
         part: 'id,snippet',
       }),
