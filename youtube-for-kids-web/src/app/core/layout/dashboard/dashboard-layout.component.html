@@ -1,0 +1,54 @@
+<div fxLayout="column" style="height: 100%">
+  <md-toolbar color="primary" class="main-header">
+    <button (click)="sidenav.toggle()" md-icon-button>
+      <md-icon>menu</md-icon>
+    </button>
+    <div class="branding">
+      <span>YouTube For Kids</span>
+    </div>
+    <div class="search-bar" fxFlex fxFlexFill fxLayout fxLayoutAlign="start center">
+      <form class="search-form" fxShow="false" fxShow.gt-xs fxFlex>
+        <md-icon>search</md-icon>
+        <input type="text" placeholder="Búsqueda" autofocus="true" />
+      </form>
+    </div>
+  </md-toolbar>
+
+  <md-sidenav-container class="sidenav-fab-container" fxFlex="100">
+    <md-sidenav #sidenav mode="side" opened="true" class="sidebar-panel">
+      <perfect-scrollbar fxFlex fxFlexFill>
+        <md-nav-list appAccordion class="navigation" fxFlex fxFlexFill>
+          <md-list-item appAccordionLink group="recents">
+            <a appAccordionToggle class="relative" md-ripple [routerLink]="['/results']">
+              <md-icon>play_arrow</md-icon>
+              <span>Recientes</span>
+              <span fxFlex></span>
+            </a>
+          </md-list-item>
+          <md-list-item appAccordionLink group="recents">
+            <a appAccordionToggle class="relative" md-ripple [routerLink]="['/admin', 'recents']">
+              <md-icon>play_arrow</md-icon>
+              <span>Recientes</span>
+              <span fxFlex></span>
+            </a>
+          </md-list-item>
+          <md-list-item appAccordionLink group="recents">
+            <a appAccordionToggle class="relative" md-ripple [routerLink]="['/admin', 'recents']">
+              <md-icon>play_arrow</md-icon>
+              <span>Recientes</span>
+              <span fxFlex></span>
+            </a>
+          </md-list-item>
+        </md-nav-list>
+      </perfect-scrollbar>
+    </md-sidenav>
+    <div class="my-content">
+      <button md-mini-fab class="fab" (click)="sidenav.toggle()">
+        <md-icon>add</md-icon>
+      </button>
+      <perfect-scrollbar>
+        <router-outlet></router-outlet>
+      </perfect-scrollbar>
+    </div>
+  </md-sidenav-container>
+</div>
