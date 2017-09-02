@@ -67,13 +67,13 @@ export class ApiService {
 
   private extractData = (res: Response): any => res.json() || {};
 
-  private handleError(error: Response): ErrorObservable {
+  private handleError(error: Response) {
     console.error('Ha ocurrido un error', error);
     let body: any;
     try {
       body = this.extractData(error);
     } catch { }
-    return Observable.throw(body && body.message || body || error);
+    return Observable.of([]);
   }
 
 }
