@@ -13,10 +13,6 @@
     overflow: auto;
 }
 
-.mat-sidenav-content {
-    padding: 1rem / 3;
-}
-
 .fab {
     position: absolute;
     right: 20px;
@@ -88,4 +84,9 @@ md-sidenav.sidebar-panel .mat-nav-list a {
     -ms-flex-align: center;
     align-items: center;
     height: 48px;
+}
+
+perfect-scrollbar {
+    width: 100%;
+    padding: .3rem;
 }

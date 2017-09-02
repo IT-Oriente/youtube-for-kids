@@ -1,6 +1,7 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MdSidenavModule, MdIconModule, MdButtonModule, MdToolbarModule, MdListModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
@@ -11,6 +12,7 @@ import { DashboardLayoutComponent } from './layout/dashboard/dashboard-layout.co
 import { AccordionLinkDirective, AccordionAnchorDirective, AccordionDirective } from './directives/accordion';
 import { ApiService } from './services/api.service';
 import { RequestService } from './services/request.service';
+import { SearchService } from './services/youtube/search.service';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -33,6 +35,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
     HttpModule,
     MdButtonModule,
     MdIconModule,
@@ -45,6 +48,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [
     ApiService,
     RequestService,
+    SearchService,
   ]
 })
 export class CoreModule {

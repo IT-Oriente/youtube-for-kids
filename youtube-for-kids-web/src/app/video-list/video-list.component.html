@@ -1,3 +1,21 @@
-<p>
-  video-list works!
-</p>
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      <h1>Resultados</h1>
+    </md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <md-nav-list>
+      <div *ngFor="let video of videos | async">
+        <a md-list-item routerLink="/detail/{{video.id.videoId}}">
+          <img md-list-avatar [src]="video.snippet.thumbnails.default.url">
+          <h4 md-line>{{video.snippet.title}}</h4>
+          <p md-line>
+            <span>{{video.snippet.description}}</span>
+          </p>
+        </a>
+        <md-divider></md-divider>
+      </div>
+    </md-nav-list>
+  </md-card-content>
+</md-card>
