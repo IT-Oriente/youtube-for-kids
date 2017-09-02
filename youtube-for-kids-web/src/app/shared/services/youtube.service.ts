@@ -25,10 +25,13 @@ export class YoutubeService {
     }
   ).map(result => result.items && result.items[0])
 
-  search = (): Observable<QueryResult<Video>> => this.api.get<QueryResult<Video>>(
+  search = (q?: string, maxResults?: number): Observable<QueryResult<Video>> => this.api.get<QueryResult<Video>>(
     'search', {
       params: this.request.getParams({
+        maxResults: maxResults || 50,
         part: 'id,snippet',
+        ...(q && { q } || {}),
+        type: 'video',
       }),
     }
   )

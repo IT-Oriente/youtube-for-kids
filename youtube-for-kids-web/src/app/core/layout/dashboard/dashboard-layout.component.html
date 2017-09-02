@@ -9,7 +9,13 @@
     <div class="search-bar" fxFlex fxFlexFill fxLayout fxLayoutAlign="start center">
       <form class="search-form" fxShow="false" fxShow.gt-xs fxFlex>
         <md-icon>search</md-icon>
-        <input type="text" placeholder="Búsqueda" autofocus="true" />
+        <input
+          type="text"
+          placeholder="Búsqueda"
+          autofocus="true"
+          [(ngModel)]="searchText"
+          (ngModelChange)="onSearchTextChanged($event)"
+          name="searchText"/>
       </form>
     </div>
   </md-toolbar>
