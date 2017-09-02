@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MdCardModule, MdIconModule, MdListModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
 
 import { VideoListComponent } from './video-list.component';
@@ -13,13 +14,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule,
-  ],
   declarations: [
     VideoListComponent,
+  ],
+  imports: [
+    CommonModule,
+    MdCardModule,
+    MdIconModule,
+    MdListModule,
+    RouterModule.forChild(routes),
+    SharedModule,
   ],
 })
 export class VideoListModule { }

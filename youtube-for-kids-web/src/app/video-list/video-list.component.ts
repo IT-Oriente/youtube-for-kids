@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { YoutubeService } from '../shared/services/youtube.service';
+import { Observable } from 'rxjs/Rx';
+import { Video } from '../shared/models/video/video';
 
 @Component({
   selector: 'app-video-list',
@@ -8,13 +10,17 @@ import { YoutubeService } from '../shared/services/youtube.service';
 })
 export class VideoListComponent implements OnInit {
 
+  videos: Observable<Video[]>;
+
   constructor(
     private youtubeService: YoutubeService,
   ) {
   }
 
   ngOnInit() {
-    this.youtubeService.search().subscribe(data => console.log);
+    this.videos = this.youtubeService
+      .search()
+      .map(r => r.items);
   }
 
 }
